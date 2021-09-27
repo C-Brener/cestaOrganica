@@ -3,6 +3,7 @@ import { Image, StyleSheet, Dimensions, Text, View } from "react-native";
 import topo from '../../assets/topo.png'
 import logo from '../../assets/logo.png'
 
+
 const width = Dimensions.get('screen').width;
 
 export default function Cesta(){
@@ -44,10 +45,10 @@ const estilos = StyleSheet.create({
         paddingHorizontal: 16,
     },
     nome:{
+        fontFamily: "MontserratBold",
         color:'#464646',
         fontSize: 26,
-        lineHeight: 42,
-        fontWeight: "bold"
+        lineHeight: 42
     },
     fazenda:{
         flexDirection:"row",
@@ -60,7 +61,8 @@ const estilos = StyleSheet.create({
     nomeFazenda:{
         fontSize: 16,
         lineHeight:26,
-        marginLeft:12
+        marginLeft:12,
+        fontFamily: "MontserratRegular"
     },
     descricao:{
         color: "#A3a3a3",
@@ -82,3 +84,4 @@ const estilos = StyleSheet.create({
 // Fragmentos é um estilo de subcomponentes que consegue agrupar outros componentes dentro de um return 
 //O padrão do flexDirection no react natoive é collum, e podemos trocar para row, funciona parecido com o display inline-block
 //Por padrão todos os elementos do react-native já são display flex
+// expo install expo-font @expo-google-fonts/montserrat - instalar fonte externa
