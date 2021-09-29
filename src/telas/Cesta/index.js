@@ -8,11 +8,11 @@ import Detalhes from "./componentes/Detalhes";
 
 
 
-const Cesta = ()=>{
+const Cesta = ({topo, detalhes})=>{
     return<>
-        <Topo/>
+        <Topo {...topo}/>
         <View style={estilos.cesta}>
-        <Detalhes/>
+            <Detalhes {...detalhes} />
         </View>
 
         
