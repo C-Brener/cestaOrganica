@@ -1,54 +1,36 @@
 import React from "react";
-import { Image, StyleSheet, Dimensions, Text, View } from "react-native";
-import Texto from "./componentes/texto";
+import { Image, StyleSheet,View } from "react-native";
+import Texto from '../../componentes/texto';
 
-import topo from '../../assets/topo.png'
-import logo from '../../assets/logo.png'
+import logo from '../../../assets/logo.png'
+import Topo from "./componentes/Topo";
 
 
 
-const width = Dimensions.get('screen').width;
 
-export default function Cesta(){
+const Cesta = ()=>{
     return<>
-        <Image source={topo} style={estilos.topo}/>
-        <Texto style={estilos.titulo}>Detalhes da Cesta</Texto>   
-        
+        <Topo/>
         <View style={estilos.cesta}>
-            <Text style={estilos.nome}>Cesta de Verduras</Text>
+            <Texto style={estilos.nome}>Cesta de Verduras</Texto>
             <View style={estilos.fazenda}>
                 <Image source={logo} style={estilos.imageName}/>
-                <Text style={estilos.nomeFazenda}>Brener Farm</Text>
+                <Texto style={estilos.nomeFazenda}>Brener Farm</Texto>
             </View>
             <Texto style={estilos.descricao}> Uma cesta com produtos selecionados cuidadosamente da fazenda para sua cozinha</Texto>
-            <Text style={estilos.preco}>R$40.00</Text>
+            <Texto style={estilos.preco}>R$40.00</Texto>
         </View>
     </>
 }
 
 const estilos = StyleSheet.create({
-    topo:{
-        width: '100%',
-        height: 578 / 768 * width,
 
-    },
-    titulo:{
-        width: '100%',
-        position: 'absolute',
-        textAlign: 'center',
-        fontSize: 20,
-        lineHeight:26,
-        color: "white",
-        fontWeight: "bold",
-        padding: 16
-
-    },
     cesta:{
         paddingVertical: 8,
         paddingHorizontal: 16,
     },
     nome:{
-        fontFamily: "MontserratBold",
+        fontWeight:"bold",
         color:'#464646',
         fontSize: 26,
         lineHeight: 42
@@ -65,7 +47,6 @@ const estilos = StyleSheet.create({
         fontSize: 16,
         lineHeight:26,
         marginLeft:12,
-        fontFamily: "MontserratRegular"
     },
     descricao:{
         color: "#A3a3a3",
@@ -81,6 +62,8 @@ const estilos = StyleSheet.create({
     }
 })
 
+export default Cesta;
+
 // Criando o primeiro componente
 // Para importar uma imagem precisamos transforma-la em um componentte importando-a
 // Não é possivel retornar dois elementos dentro de um return
@@ -88,3 +71,4 @@ const estilos = StyleSheet.create({
 //O padrão do flexDirection no react natoive é collum, e podemos trocar para row, funciona parecido com o display inline-block
 //Por padrão todos os elementos do react-native já são display flex
 // expo install expo-font @expo-google-fonts/montserrat - instalar fonte externa
+// Comand + d seleciona aquilo onde o cursor está e procura nomes parecidos para caso tenhamos o desejo de substituir

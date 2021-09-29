@@ -2,7 +2,7 @@ import { Montserrat_400Regular } from "@expo-google-fonts/montserrat";
 import React from "react";
 import { Text, View, StyleSheet } from "react-native";
 
-export default function Texto({children, style}){
+const Texto=({children, style})=>{
     let estilo = estilos.texto;
     
 
@@ -23,7 +23,7 @@ const estilos = StyleSheet.create({
     }
 })
 
-// 
+export default Texto;
 
 /*
 O react-native tem uma função que define algo chamado children, e o que seria isso?, 
