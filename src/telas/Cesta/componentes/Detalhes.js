@@ -3,6 +3,7 @@ import { StyleSheet, View, Image, Alert, TouchableOpacity} from "react-native";
 
 /*Componentes Criados */
 import Texto from "../../../componentes/texto";
+import Botao from "../../../componentes/Botao";
 
 const Detalhes = ({nome, logoFazenda, nomeFazenda, descricao, preco, botao})=>{
     return<>
@@ -13,11 +14,9 @@ const Detalhes = ({nome, logoFazenda, nomeFazenda, descricao, preco, botao})=>{
                 </View>
                 <Texto style={estilos.descricao}>{descricao}</Texto>
                 <Texto style={estilos.preco}>{preco}</Texto>
-                <TouchableOpacity style={estilos.botao} onPress={() => Alert.alert('Testando Botão')}>
-                    <Texto>{botao}</Texto>
-                </TouchableOpacity>
-                
-
+                <Botao>
+                    <Texto style={estilos.textoBotao}>{botao}</Texto>
+                </Botao>
         </>
     }
 
@@ -53,16 +52,14 @@ const estilos = StyleSheet.create({
         lineHeight:42,
         marginTop:8
     },
-    botao:{
-        alignItems: "center",
-        justifyContent: "center",
-        width:"100%",
-        height:40,
-        backgroundColor:'#2a9f85',
-        borderRadius:5
-    }
+    textoBotao:{
+        color: "white",
+        fontSize:16,
+        lineHeight:26,
+        fontWeight: "bold",
+    },
 })
 
 export default Detalhes;
 
-// O botão é um tanto limitado, não aceitado estilos externos e afins,  contudo podemos substituir o button por TouchableOpacity 
+// O botão é um tanto limitado, não aceitado estilos externos e afins, contudo podemos substituir o button por TouchableOpacity 
