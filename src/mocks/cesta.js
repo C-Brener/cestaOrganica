@@ -20,7 +20,8 @@ const cesta = {
     },
     itens:{
         titulo:"Itens da cesta",
-        lista: [{
+        lista: [
+        {
             nome: "Tomate",
             imagem: tomate,
         },
