@@ -8,8 +8,8 @@ const Itens= ({ titulo, lista })=>{
         <Texto style={estilos.titulo}>{ titulo }</Texto>
         {lista.map(({nome, imagem})=>{
             return <View style={estilos.lista} key={nome}>
-            <Texto >{nome}</Texto>
-            <Image style={estilos.imagem}source={imagem}/>
+            <Image style={estilos.imagem} source={imagem}/>
+            <Texto style={estilos.texto}>{nome}</Texto>
             </View>
         })}
     
@@ -21,15 +21,27 @@ const estilos = StyleSheet.create({
         color:"#464646",
         fontWeight:"bold",
         marginTop:32,
+        marginBottom: 8,
         textAlign: "center"
     },
     lista:{
         flex:1,
         flexDirection:"row",
+        borderBottomWidth: 1, 
+        borderBottomColor:"#ECECEC",
+        paddingVertical: 16,
+        alignItems:"center"
     },
     imagem:{
-        width:40,
-        height:40
+        width:46,
+        height:46
+    },
+    texto:{
+        fontSize:16,
+        lineHeight:26,
+        marginLeft:12,
+        color:"#464646"
+
     }
 })
 

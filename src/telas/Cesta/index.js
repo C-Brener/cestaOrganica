@@ -10,15 +10,14 @@ import Itens from "./componentes/itens";
 
 
 const Cesta = ({topo, detalhes, itens})=>{
-    return<>
-    <ScrollView>
+    return <ScrollView>
         <Topo {...topo}/>
         <View style={estilos.cesta}>
             <Detalhes {...detalhes} />
             <Itens {...itens} />
         </View>
     </ScrollView>
-</>
+
 }
 
 const estilos = StyleSheet.create({
