@@ -1,9 +1,13 @@
 import React from "react";
-import { Image, View, StyleSheet, FlatList} from "react-native";
+import { Image, View, StyleSheet} from "react-native";
 import Texto from '../../../componentes/texto'
 
-
-const Item= ({item: {nome, imagem}})=>{
+interface propsItem{
+    item:any
+    nome:string;
+    imagem:string
+}
+const Item= ({item: {nome, imagem}}:propsItem)=>{
     return <View style={estilos.lista}>
     <Image style={estilos.imagem} source={imagem}/>
     <Texto style={estilos.texto}>{nome}</Texto>

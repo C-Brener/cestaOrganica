@@ -7,7 +7,10 @@ import topo from '../../../../assets/topo.png'
 
 const width = Dimensions.get('screen').width;
 
-const Topo = ({titulo})=>{
+interface propsTopo{
+    titulo:string
+}
+const Topo = ({titulo}:propsTopo)=>{
     return <>
         <Image source={topo} style={estilos.topo}/>
         <Texto style={estilos.titulo}>{titulo}</Texto>   

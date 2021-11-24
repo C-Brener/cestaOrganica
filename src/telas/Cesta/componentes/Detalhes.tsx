@@ -1,11 +1,20 @@
 import React from "react";
-import { StyleSheet, View, Image, Alert, TouchableOpacity} from "react-native";
+import { StyleSheet, View, Image, Alert, TouchableOpacity, ImageSourcePropType} from "react-native";
 
 /*Componentes Criados */
 import Texto from "../../../componentes/texto";
 import Botao from "../../../componentes/Botao";
 
-const Detalhes = ({nome, logoFazenda, nomeFazenda, descricao, preco, botao})=>{
+interface propsDetails{
+    nome:string;
+    logoFazenda:ImageSourcePropType
+    nomeFazenda:string
+    descricao:string
+    preco:string
+    botao:string
+}
+
+const Detalhes = ({nome, logoFazenda, nomeFazenda, descricao, preco, botao}:propsDetails)=>{
     return<>
                 <Texto style={estilos.nome}>{nome}</Texto>
                 <View style={estilos.fazenda}>
@@ -14,7 +23,7 @@ const Detalhes = ({nome, logoFazenda, nomeFazenda, descricao, preco, botao})=>{
                 </View>
                 <Texto style={estilos.descricao}>{descricao}</Texto>
                 <Texto style={estilos.preco}>{preco}</Texto>
-                <Botao>
+                <Botao onPress={() => Alert.alert('Testando Botão')} activeOpacity={0.1}>
                     <Texto style={estilos.textoBotao}>{botao}</Texto>
                 </Botao>
         </>

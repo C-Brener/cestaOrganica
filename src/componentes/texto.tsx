@@ -2,7 +2,12 @@ import { Montserrat_400Regular } from "@expo-google-fonts/montserrat";
 import React from "react";
 import { Text, View, StyleSheet } from "react-native";
 
-const Texto=({children, style})=>{
+interface propsText{
+    children:string;
+    style:any
+}
+
+const Texto=({children, style}:propsText)=>{
     let estilo = estilos.texto;
     
 

@@ -1,10 +1,12 @@
 import React from "react";
-import { TouchableOpacity, Alert, StyleSheet } from "react-native";
+import { TouchableOpacity, Alert, StyleSheet, TouchableOpacityProps} from "react-native";
 
-
-const Botao = ({children})=>{
+interface props extends TouchableOpacityProps{
+    children : any
+}
+const Botao = ({children, ...rest}:props)=>{
     return<>
-        <TouchableOpacity style={estilos.botao} onPress={() => Alert.alert('Testando Botão')}>
+        <TouchableOpacity style={estilos.botao} {...rest}>
             {children}
         </TouchableOpacity>
     </>
