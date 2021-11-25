@@ -1,8 +1,8 @@
-import React from "react";
+import React, {ReactNode} from "react";
 import { TouchableOpacity, Alert, StyleSheet, TouchableOpacityProps} from "react-native";
 
 interface props extends TouchableOpacityProps{
-    children : any
+    children : ReactNode
 }
 const Botao = ({children, ...rest}:props)=>{
     return<>
